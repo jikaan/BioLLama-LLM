@@ -63,4 +63,6 @@ Copy code
   publisher = {GitHub},
   note = {https://github.com/jikaan/BioLLama-LLM}
 }
-<p align="center"> 🧠 For complete weights and inference setup visit <a href="https://huggingface.co/calender/BioLLama-LLM-Adapters">BioLLama LLM Adapters on Hugging Face</a> </p> ```
+```
+<p align="center"> 🧠 For complete weights and inference setup visit <a href="https://huggingface.co/calender/BioLLama-LLM-Adapters">BioLLama LLM Adapters on Hugging Face</a> </p>
+  
