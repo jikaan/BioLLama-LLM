@@ -83,4 +83,6 @@ Hu et al., LoRA: Low Rank Adaptation for Efficient Fine Tuning of Large Language
 Released under Apache 2.0 License.
 Free for research and educational applications.
 
-<p align="center"> 🧬 Developed by <b>Calendar S.</b><br> 🌿 Empowering medical research through responsible AI<br> ⭐ Star the repository if you find it useful </p>
+🧬 Developed by **Calendar S.**  
+🌿 Empowering medical research through responsible AI  
+⭐ Star the repository if you find it useful
