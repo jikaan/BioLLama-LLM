@@ -1,88 +1,66 @@
 <p align="center">
-  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="90"/>
+  <img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/hub/model_card.png" width="640"/>
 </p>
 
-<h1 align="center">🧬 Med Llama SFT</h1>
-<h3 align="center">Biomedical reasoning model with LoRA adapters and supervised chain of thought fine tuning</h3>
+<h1 align="center">🧠 BioLLama LLM</h1>
+<h3 align="center">Fine tuned medical reasoning system using Llama 3 based architecture</h3>
+<p align="center">
+  <b>Developed by <a href="https://huggingface.co/calender">calender</a></b>  
+  <br>
+  <a href="https://huggingface.co/calender/BioLLama-LLM-Adapters">🔗 View model on Hugging Face</a>
+</p>
 
 ---
 
-### 📘 Project Summary
+### 🌿 Overview
 
-This repository contains the training scripts, adapter weights, and environment configuration for **BioLLama SFT**, a fine tuned **medical question answering system** derived from **Llama 3 2 1B**.  
-The model improves biomedical reasoning quality while maintaining small scale efficiency.
-
----
-
-### 🧩 Repository Structure
-
-project_root/
-│
-├── adapters/ ← LoRA adapter safetensors
-├── examples/ ← Example inference snippets
-├── requirements.txt ← Dependency list
-├── single.txt ← Example fine tuning prompt
-├── convo.txt ← Original supervised conversation sample
-├── LICENSE ← Apache 2.0
-└── README.md ← This documentation
-
-yaml
-Copy code
+BioLLama LLM is an end to end biomedical language model pipeline designed for medical question answering and reasoning.  
+The adapter weights are hosted on **Hugging Face** for easy integration in downstream medical NLP systems.
 
 ---
 
-### ⚙️ Environment Setup
+### 🧩 Key Features
 
-```bash
-pip install -r requirements.txt
-Dependencies include:
+- Fine tuned via **LoRA** for lightweight domain specialization  
+- Utilizes **4 bit quantized QLoRA** for efficient deployment  
+- **Chain of thought** style reasoning for clinical interpretability  
+- Trained on **MedMCQA** medical dataset  
+- 72.7 percent performance on NEET PG 2024 subset
 
-transformers
+---
 
-peft
+### ⚙️ Quick Usage
 
-bitsandbytes
+```python
+from transformers import AutoTokenizer, AutoModelForCausalLM, PeftModel
 
-torch
+base = "ContactDoctor/Bio-Medical-Llama-3-2-1B-CoT-012025"
+adapter = "calender/BioLLama-LLM-Adapters"
 
-accelerate
+tokenizer = AutoTokenizer.from_pretrained(base)
+model = AutoModelForCausalLM.from_pretrained(base)
+model = PeftModel.from_pretrained(model, adapter)
 
-🚀 Quick Inference Example
-python
-Copy code
-from transformers import AutoModelForCausalLM, AutoTokenizer, PeftModel
-
-base_model = "ContactDoctor/Bio-Medical-Llama-3-2-1B-CoT-012025"
-adapter_model = "./adapters"
-
-tokenizer = AutoTokenizer.from_pretrained(base_model)
-model = AutoModelForCausalLM.from_pretrained(base_model)
-model = PeftModel.from_pretrained(model, adapter_model)
-
-query = "Describe the first line management of diabetic ketoacidosis"
+query = "Explain management of acute pulmonary embolism"
 inputs = tokenizer(query, return_tensors="pt")
 outputs = model.generate(**inputs, max_new_tokens=200)
 print(tokenizer.decode(outputs[0], skip_special_tokens=True))
-📊 Results Summary
-Dataset	Accuracy	Observation
-MedMCQA	40 percent	Validation accuracy
-NEET PG Clinical Subset	72.7 percent	Peak accuracy achieved
+📊 Model Information
+Field	Description
+Base Model	ContactDoctor Bio Medical Llama 3 2 1B CoT 012025
+Adapter	BioLLama LLM Adapters
+Frameworks	Transformers, PEFT
+License	Apache 2.0
+Model Card	View on Hugging Face
 
-💡 Key Insights
-LoRA adaptation reduced GPU memory by over 70 percent compared to full fine tuning
-
-Chain of thought supervision improved interpretability
-
-Quantized training stabilized gradient flow for small clinical datasets
-
-🧠 Research Reference
-Pal et al., MedMCQA: A Biomedical QA Dataset for Doctor Level Assessment, arXiv:2203.14371
-Hu et al., LoRA: Low Rank Adaptation for Efficient Fine Tuning of Large Language Models, arXiv:2106.09685
-
-📜 License
-Released under Apache 2.0 License.
-Free for research and educational applications.
-
-🧬 Developed by **Calendar S.**  
-🌿 Empowering medical research through responsible AI  
-⭐ Star the repository if you find it useful
+📚 Citation
+java
+Copy code
+@misc{calendar2025biollama,
+  title = {BioLLama LLM},
+  author = {Calendar, S.},
+  year = {2025},
+  publisher = {GitHub},
+  note = {https://github.com/jikaan/BioLLama-LLM}
+}
+<p align="center"> 🧠 For complete weights and inference setup visit <a href="https://huggingface.co/calender/BioLLama-LLM-Adapters">BioLLama LLM Adapters on Hugging Face</a> </p> ```
