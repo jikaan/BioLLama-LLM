@@ -1,11 +1,9 @@
-<div align="center">
+<p align="center">
+  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="90"/>
+</p>
 
-<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="90"/>
-
-<h1 style="font-family: 'Segoe UI'; font-weight:700;">🧬 Med Llama SFT</h1>
-<h3 style="font-family: 'Segoe UI'; font-weight:500;">Biomedical reasoning model with LoRA adapters and supervised chain of thought fine tuning</h3>
-
-</div>
+<h1 align="center">🧬 Med Llama SFT</h1>
+<h3 align="center">Biomedical reasoning model with LoRA adapters and supervised chain of thought fine tuning</h3>
 
 ---
 
@@ -85,9 +83,4 @@ Hu et al., LoRA: Low Rank Adaptation for Efficient Fine Tuning of Large Language
 Released under Apache 2.0 License.
 Free for research and educational applications.
 
-<div align="center" style="font-family:'Segoe UI'; font-size:16px; font-weight:500;">
-🧬 Developed by <b>Calendar S.</b>
-🌿 Empowering medical research through responsible AI
-⭐ Star the repository if you find it useful
-
-</div>
+<p align="center"> 🧬 Developed by <b>Calendar S.</b><br> 🌿 Empowering medical research through responsible AI<br> ⭐ Star the repository if you find it useful </p>
