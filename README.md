@@ -43,12 +43,12 @@ To utilize the model, ensure you have `transformers`, `peft`, and `torch` instal
 
 ```bash
 pip install torch transformers peft bitsandbytes accelerate
-
+```
 Python Implementation
 
 The following script demonstrates how to load the base model with the BioLLama adapter for inference:
 Python
-
+```
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import PeftModel
@@ -114,4 +114,5 @@ This project is licensed under the Apache 2.0 License.
 
 
 ---
+
 
