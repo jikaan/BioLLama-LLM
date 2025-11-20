@@ -94,7 +94,7 @@ if __name__ == "__main__":
     print(f"Query: {medical_query}")
     print(f"Response:\n{response}")
     print("-" * 50)
-
+```
 Citation
 
 If you use this model in your research or application, please cite it as follows:
@@ -115,15 +115,3 @@ This project is licensed under the Apache 2.0 License.
 
 ---
 
-### **My Pro-Tip for you:**
-
-To make this *actually* better (not just look better), you should eventually add a section called **"Training Configuration"**.
-
-ML engineers respect reproducibility. Even if you just add a few bullet points like this, it adds massive credibility:
-
-> **Training Hyperparameters:**
-> * **LoRA Rank (r):** 16 (example)
-> * **LoRA Alpha:** 32 (example)
-> * **Batch Size:** 4
-> * **Learning Rate:** 2e-4
-> * **Optimizer:** AdamW
